@@ -67,3 +67,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 # react-example
+## Movie App 2019
+
+React JS fundmentals Course (2019 Update!)
