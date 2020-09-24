@@ -17,17 +17,17 @@ npm install npx -g # npx를 글로벌로 설치.
 React Web App을 Set up 할 수 있게 도와줌.
 
 ```bash
-// iterm에서 실행
-cd Documents // 내 문서에서
+# iterm에서 실행
+cd Documents # 내 문서에서
 
-npx creap-react-app project_name // 리액트 설치
+npx creap-react-app project_name # 리액트 설치
 
-npm start // vscode 해당 프로젝트 터미널에서 실행 -> 서버 실행
+npm start # vscode 해당 프로젝트 터미널에서 실행 -> 서버 실행
 ```
 
 # github에 리포지토리 생성
 ```bash
-// vscode 터미널에서 실행. ~/Documents/project_name/ 확인하고,
+# vscode 터미널에서 실행. ~/Documents/project_name/ 확인하고,
 git init
 ```
 깃허브로 가서 리포지토리 생성. (packge.json 에 있는 name으로 하는게 편함)
