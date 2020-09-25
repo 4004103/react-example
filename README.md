@@ -192,3 +192,39 @@ import "./App.css";
 # github 무료 호스팅
 [노마드코더 유튜브](https://www.youtube.com/watch?v=HdFbiPkZXR0&list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf&index=23)
 
+```bash
+git remote -v # 리모트 저장소 확인하기. -v 옵션을 주면 단축이름과 URL을 함께 볼 수 있음
+
+npm i gh-pages # github에 업로드하는걸 허가해주는 모듈
+```
+
+packge.json에서 homepage 추가, script 추가
+```javascript
+{
+  "script": {
+    //...
+    //...
+    "deploy": "gh-pages -d build", // gh page를 호출하고 폴더를 업로드.
+    "predeploy": "npm run build"
+  }
+  "something": {
+  // ...
+  },
+  "homepage": "https://{github username}.github.io/{project name}" // 모두 소문자여야 함
+}
+```
+이름이 같아야 pre가 동작함. 위의 경우엔 deploy, predeploy 
+
+```bash 
+npm run bulid # 프로젝트에 build 파일이 생김
+
+npm run deploy
+
+# Published 가 뜨면 완료!
+```
+
+기본적으로 매 순간 deploy를 호출 할 때 마다 predeploy를 먼저 호출함.
+
+predeploy는 npm run build 이고, build는 build script를 호출하고 build 폴더를 생성해줌.
+
+predeploy가 완료되면 deploy가 gh-pages를 호출하고 build 폴더를 업로드 함.
