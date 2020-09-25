@@ -228,3 +228,71 @@ npm run deploy
 predeploy는 npm run build 이고, build는 build script를 호출하고 build 폴더를 생성해줌.
 
 predeploy가 완료되면 deploy가 gh-pages를 호출하고 build 폴더를 업로드 함.
+
+
+# react-router-dom
+네비게이션을 만들어주는 패키지
+```bash
+npm install react-router-dom # 설치
+```
+
+## router
+router는 URL을 가져다가 뭘 명령했느냐에 따라 이 컴포넌트를 불러오자. 라고 한다..!
+```javascript
+import { HashRouter, Route } from "react-router-dom"; // 파일 상단에 import
+
+function App() {
+  return
+    <HashRouter>
+      <Route path="/about" component={About} /> // path about.js로 들어가서 component About을 보여줘
+    </HashRouter>
+}
+```
+route안에 매우 중요한 propps가 두개 들어가는데
+1. path: 보통 url을 지정해줌.
+2. component: path로 들어갔을 때 보여줄 페이지
+path와 action을 연결해줌.
+
+## exact
+중복되는 라우트가 보이면 같이 렌더링 해버림.
+```javascript
+<HashRouter>
+  <Route path="/" exact={true} component={Home} /> // 오직 /가 있을 때만 home을 렌더링. 설정한 path 아니면 렌더링 하지 않는다.
+  <Route path="/about" component={About} />
+</HashRouter>
+```
+
+
+## Link
+react에서 a태그는 페이지를 새로고침해버림.
+Link로 a태그를 대신함
+
+```javascript
+import { Link } from "react-route-dom";
+
+<Link to="/">Home</Link>
+```
+
+1. router 밖에서 Link를 쓸 수 없음.
+2. Link를 쓰지 않는다면 모든걸 router 안에 모든걸 넣을 필요는 없음.
+3. to의 주소랑 path의 주소가 같아야 동작함.
+
+## react-router
+`Link to=""` 에 object, pathname, state 등등 여러가지 추가 가능
+공식문서에 있음.
+라우터를 통해 클릭할 때 주어진 props로 정보를 전달한다.
+```javascript
+<Link
+  to={{
+    pathname:"", //정보를 전송할 URL
+    search:"",
+    hash:"",
+    state: { fromDashboard:true }
+  }}
+/>
+// ...등등
+```
+
+#redux
+redux는 state를 저장함.
+해당 페이지를 다른 어딘가에 저장해뒀다가 다시 돌아와도 로딩을 볼 필요가 없게 해줌.
