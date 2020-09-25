@@ -190,5 +190,5 @@ import "./App.css";
 **`label` 같은 경우 javascript에서 `for`은 loop 이기 때문에 `htmlFor` 을 써야합니다!**
 
 # github 무료 호스팅
-[노마드코더 유튜브][https://www.youtube.com/watch?v=HdFbiPkZXR0&list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf&index=23]
+[노마드코더 유튜브](https://www.youtube.com/watch?v=HdFbiPkZXR0&list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf&index=23)
 
