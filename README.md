@@ -84,7 +84,7 @@ function Food ({ fav }) { // () 안에 props.fav 또는 {}내부에 fav는 prope
 npm install prop-types #설치
 ```
 ```javascript
-import PropTypes form "prop-types";
+import PropTypes form "prop-types"; // 파일에 import
 
 // 사용법
 Food.propTypes = { // 이름은 꼭 propTypes로 지어야 함. 
@@ -117,6 +117,7 @@ class App extends React.Component {
 > **class component는 class임. 하지만 react component로 부터 확장되고 screen에 표시됨. 그리고 표시되는 걸 render 메소드 안에 넣어야 함!**
 > **react는 자동적으로 모든 class component의 render 메소드를 실행하고자 함.**
 
+
 ## state
  class component에 있음
 ```javascript
@@ -136,7 +137,14 @@ state에 바꾸고 싶은 데이터를 넣을것임
 setState 를 호출함으로 새 state(변경된 데이터?) 와 함께 render function이 호출됨…???? 그래서 작업을 이어갈수가 있는거신가..!
 
 setState를 호출할 때 마다 react는 새로운 state와 함께 render function을 호출함
- 내가 setState를 호출 할 때만! 일어날 일이야 어썸~ 후우.........
+ 내가 setState를 호출 할 때만! 일어날 일이야 어썸~ 후우........
+ 
+ state가 필요 없을 경우에는 class component를 쓰지 않아도 됨.
+ 
+> **state와 props의 차이점**
+> props (“properties”의 줄임말) 와 state 는 일반 JavaScript 객체입니다. 
+> 두 객체 모두 렌더링 결과물에 영향을 주는 정보를 갖고 있는데, 한 가지 중요한 방식에서 차이가 있습니다. 
+> props는 (함수 매개변수처럼) 컴포넌트에 전달되는 반면 state는 (함수 내에 선언된 변수처럼) 컴포넌트 안에서 관리됩니다.
 
 ## life cycle method
 life cycle method 를 가지는데 이건 기본적으로 리액트가 컴포넌트를 생성하고 없애는 방법임.
@@ -149,4 +157,38 @@ life cycle method 를 가지는데 이건 기본적으로 리액트가 컴포넌
 - unmounting 컴포넌트가 죽다. (페이지를 바꿀때)
 - render 제일 처음 호출됨.
 
-setState를 호출하면 component를 호출하고 먼저 render를 호출 한 뒤 업데이트가 완료되었다고 말하면 componentDidUpdate가 .
+setState를 호출하면 component를 호출하고 먼저 render를 호출 한 뒤 업데이트가 완료되었다고 말하면 componentDidUpdate가 호출됨.
+
+## axios
+axios는 fetch 위에 있는 작은 layer.
+뭔가 요청하고있음. 네트워크에 있음..! 
+```bash
+npm install axios #설치
+```
+```javascript
+import axios from "axios"; // App.js맨 상단에 추가
+
+getMovies = async () => { // axios는 가끔 빠르지않아서 기다려야함. async 함수가 비동기임. 이걸 기다려야함
+  const movies - await axios.get("API URL"); // await -> axios를 기다려야함. axios가 끝날 떄 까지 기다렸다가 계속함
+};
+componentDidMount() {
+  this.getMocies();
+}
+```
+
+# CSS
+CSS파일로 작업하는게 좋습니다~
+```javascript
+// jax에서 태그에 바로 style 적용하는 방법
+<div stype={{ color: "red" }}></div>
+
+// 파일 상단에 import
+import "./App.css";
+```
+
+**jsx는 `class` 대신에 `className`을 써야합니다!**
+**`label` 같은 경우 javascript에서 `for`은 loop 이기 때문에 `htmlFor` 을 써야합니다!**
+
+# github 무료 호스팅
+[노마드코더 유튜브][https://www.youtube.com/watch?v=HdFbiPkZXR0&list=PL7jH19IHhOLPp990qs8MbSsUlzKcTKuCf&index=23]
+
