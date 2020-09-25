@@ -1,0 +1,44 @@
+.nav {
+    background-color: #ccc;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav a {
+    margin: 5px 0;
+    font-size: 16px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* About page */
+.about__container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__container span {
+    padding: 20px;
+    background: #666;
+    box-shadow: 1px 6px 10px 5px #ccc;
+}
+
+/* Detail page */
+.detail__wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.detail__wrap span {
+    font-size: 20px;
+    font-weight: bold;
+}
